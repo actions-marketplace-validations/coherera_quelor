@@ -6,6 +6,24 @@
   "want_rule": "gha-rate-limit"
  },
  {
+  "name": "graphql RATE_LIMITED with message",
+  "log": "{\"errors\":[{\"type\":\"RATE_LIMITED\",\"message\":\"API rate limit already exceeded\"}]}",
+  "want_class": "resource-exhausted",
+  "want_rule": "gha-rate-limit"
+ },
+ {
+  "name": "graphql RATE_LIMITED without message",
+  "log": "{\"errors\":[{\"type\":\"RATE_LIMITED\"}]}",
+  "want_class": "resource-exhausted",
+  "want_rule": "gha-rate-limit"
+ },
+ {
+  "name": "graphql rate limit already exceeded wording",
+  "log": "GraphQL: API rate limit already exceeded",
+  "want_class": "resource-exhausted",
+  "want_rule": "gha-rate-limit"
+ },
+ {
   "name": "rate limit, client wording",
   "log": "gh: HTTP 403: rate limit exceeded (https://api.github.com/graphql)",
   "want_class": "resource-exhausted",
